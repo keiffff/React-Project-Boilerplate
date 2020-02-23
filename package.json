@@ -1,0 +1,52 @@
+{
+  "name": "frontend-project-boilerplate",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Kei Fujikawa",
+  "license": "MIT",
+  "scripts": {
+    "remake": "rm -rf dist/; mkdir -p dist/; cp src/index.html dist/index.html;",
+    "start": "yarn remake; webpack-dev-server --progress --develop",
+    "build": "yarn remake; webpack --progress",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.4",
+    "@types/react": "^16.9.22",
+    "@types/react-dom": "^16.9.5",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^7.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.4.0",
+    "fork-ts-checker-webpack-plugin": "^4.0.4",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint -c .eslintrc.js --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
