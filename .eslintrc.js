@@ -1,4 +1,3 @@
-const path = require('path');
 module.exports = {
   parser: '@typescript-eslint/parser',
   env: {
@@ -15,7 +14,7 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   parserOptions: {
-    project: path.resolve(__dirname, './tsconfig.json'),
+    project: './tsconfig.json',
     ecmaVersion: 2018,
     sourceType: 'module',
     ecmaFeatures: {
@@ -25,10 +24,10 @@ module.exports = {
   plugins: ['@typescript-eslint', 'import', 'jsx-a11y', 'prettier', 'react', 'react-hooks'],
   rules: {
     // eslint
-    'consistent-return': ['off'],
+    'consistent-return': 'off',
     'newline-before-return': 'error',
     'no-console': 'warn',
-    'import/prefer-default-export': ['off'],
+    'import/prefer-default-export': 'off',
     'no-restricted-syntax': 'off',
     'no-unused-expressions': ['error', { allowShortCircuit: true }],
     // @typescript-eslint
@@ -57,6 +56,7 @@ module.exports = {
     // jsx-a11y
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'jsx-a11y/img-redundant-alt': 'off',
     // react
     'react/jsx-filename-extension': [
       'error',
@@ -64,8 +64,9 @@ module.exports = {
         extensions: ['.jsx', '.tsx'],
       },
     ],
-    'react/jsx-one-expression-per-line': ['warn'],
-    'react/jsx-wrap-multilines': ['off'],
+    'react/jsx-one-expression-per-line': 'warn',
+    'react/jsx-wrap-multilines': 'off',
+    'react/no-array-index-key': 'off',
     // react-hooks
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
