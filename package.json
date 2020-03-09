@@ -24,7 +24,6 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.4.0",
-    "fork-ts-checker-webpack-plugin": "^4.0.4",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
@@ -40,8 +39,7 @@
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
-      "eslint 'src/**/*.{ts,tsx}' --fix",
-      "git add"
+      "eslint 'src/**/*.{ts,tsx}' --fix"
     ]
   },
   "husky": {
