@@ -24,12 +24,15 @@ module.exports = {
   plugins: ['@typescript-eslint', 'import', 'jsx-a11y', 'prettier', 'react', 'react-hooks'],
   rules: {
     // eslint
+    'global-require': 'off',
     'consistent-return': 'off',
     'newline-before-return': 'error',
     'no-console': 'warn',
     'import/prefer-default-export': 'off',
     'no-restricted-syntax': 'off',
     'no-unused-expressions': ['error', { allowShortCircuit: true }],
+    'no-underscore-dangle': 'off',
+    'no-nested-ternary': 'off',
     // @typescript-eslint
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-empty-function': 'off',
@@ -67,6 +70,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 'warn',
     'react/jsx-wrap-multilines': 'off',
     'react/no-array-index-key': 'off',
+    'react/display-name': 'off',
     // react-hooks
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
