@@ -7,7 +7,7 @@
   "scripts": {
     "remake": "rm -rf dist/; mkdir -p dist/; cp src/index.html dist/index.html;",
     "start": "yarn remake; webpack-dev-server --progress --develop",
-    "build": "yarn remake; webpack --progress --production",
+    "build": "yarn remake; webpack --progress",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
   },
   "devDependencies": {
