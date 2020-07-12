@@ -13,12 +13,7 @@ module.exports = {
           {
             test: /\.(ts|tsx)$/,
             use: [
-              {
-                loader: require.resolve('babel-loader'),
-              },
-              {
-                loader: require.resolve('ts-loader'),
-              },
+              ...customConfig.module.rules[0].use,
               {
                 loader: require.resolve('react-docgen-typescript-loader'),
               },
@@ -26,6 +21,7 @@ module.exports = {
           },
         ],
       },
+      plugins: [...config.plugins, ...customConfig.plugins],
     };
   },
 };
