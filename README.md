@@ -16,4 +16,10 @@
 - Babel
 - Emotion
 - React Router
-- Vercel
+
+## Supports
+
+- Code formatting & linting system
+- Component-based UI system
+- Route-based lazy loading
+- Type check & Transpile on separate process

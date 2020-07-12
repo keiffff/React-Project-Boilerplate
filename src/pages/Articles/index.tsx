@@ -1,8 +1,10 @@
 import React from 'react';
 import { GlobalHeader } from 'components/GlobalHeader';
 
-export const Articles = () => (
+const Articles = () => (
   <>
     <GlobalHeader pageTitle="Articles" />
   </>
 );
+
+export default Articles;

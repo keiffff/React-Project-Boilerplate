@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { Home } from 'pages/Home';
-import { Articles } from 'pages/Articles';
-import { Profile } from 'pages/Profile';
 import { routes } from 'constants/routes';
+import { LoadingIndicator } from 'components/LoadingIndicator';
+
+const Home = lazy(() => import('pages/Home'));
+const Articles = lazy(() => import('pages/Articles'));
+const Profile = lazy(() => import('pages/Profile'));
 
 export const App = () => (
   <BrowserRouter>
-    <Switch>
-      <Route path={routes.home} exact>
-        <Home />
-      </Route>
-      <Route path={routes.articles}>
-        <Articles />
-      </Route>
-      <Route path={routes.profile}>
-        <Profile />
-      </Route>
-      <Redirect to={routes.home} />
-    </Switch>
+    <Suspense fallback={LoadingIndicator}>
+      <Switch>
+        <Route path={routes.home} exact>
+          <Home />
+        </Route>
+        <Route path={routes.articles}>
+          <Articles />
+        </Route>
+        <Route path={routes.profile}>
+          <Profile />
+        </Route>
+        <Redirect to={routes.home} />
+      </Switch>
+    </Suspense>
   </BrowserRouter>
 );
