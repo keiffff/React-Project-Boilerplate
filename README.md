@@ -16,11 +16,12 @@
 - Babel
 - Emotion
 - React Router
+- Storybook
 
 ## Supports
 
 - Code formatting & linting system
-- Component-based UI system
+- Component-based UI development powered by Storybook
 - Route-based lazy loading
 - Error boundary
-- Type check & Transpile on separate process
+- Type checking & Transpilation on separate process
