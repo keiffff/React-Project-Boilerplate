@@ -22,4 +22,5 @@
 - Code formatting & linting system
 - Component-based UI system
 - Route-based lazy loading
+- Error boundary
 - Type check & Transpile on separate process

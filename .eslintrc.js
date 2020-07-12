@@ -27,7 +27,7 @@ module.exports = {
     'global-require': 'off',
     'consistent-return': 'off',
     'newline-before-return': 'error',
-    'no-console': 'warn',
+    'no-console': 'off',
     'import/prefer-default-export': 'off',
     'no-restricted-syntax': 'off',
     'no-unused-expressions': ['error', { allowShortCircuit: true }],
