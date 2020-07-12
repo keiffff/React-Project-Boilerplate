@@ -7,10 +7,9 @@
   "scripts": {
     "remake": "rm -rf dist/; mkdir -p dist/; cp src/index.html dist/index.html",
     "start": "yarn remake; webpack-dev-server --progress --develop",
-    "start:storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006",
     "build": "yarn remake; webpack --progress",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
-    "storybook": "start-storybook -p 6006"
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
