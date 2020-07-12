@@ -1,8 +1,7 @@
 const path = require('path');
-const argv = require('yargs').argv;
+const { argv } = require('yargs');
 
 module.exports = {
-  context: process.cwd(),
   mode: argv.develop ? 'development' : 'production',
   entry: './src/index.tsx',
   resolve: {
@@ -21,7 +20,12 @@ module.exports = {
       {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
-        use: [{ loader: 'ts-loader' }],
+        use: [
+          {
+            loader: 'babel-loader',
+          },
+          { loader: 'ts-loader' },
+        ],
       },
     ],
   },
