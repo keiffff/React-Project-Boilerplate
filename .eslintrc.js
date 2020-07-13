@@ -28,7 +28,6 @@ module.exports = {
     'consistent-return': 'off',
     'newline-before-return': 'error',
     'no-console': 'off',
-    'import/prefer-default-export': 'off',
     'no-restricted-syntax': 'off',
     'no-unused-expressions': ['error', { allowShortCircuit: true }],
     'no-underscore-dangle': 'off',
@@ -49,6 +48,13 @@ module.exports = {
     ],
     // import
     'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['src/**/*.stories.tsx'],
+      },
+    ],
     // jsx-a11y
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
