@@ -1,14 +1,16 @@
 {
-  "name": "frontend-project-boilerplate",
+  "name": "react-project-boilerplate",
   "version": "1.0.0",
   "main": "dist/index.js",
   "author": "Kei Fujikawa",
   "license": "MIT",
   "scripts": {
-    "remake": "rm -rf dist/; mkdir -p dist/; cp src/index.html dist/index.html",
-    "start": "yarn remake; webpack-dev-server --progress --develop",
-    "storybook": "start-storybook -p 6006",
-    "build": "yarn remake; webpack --progress",
+    "remake": "rm -rf dist/ && mkdir -p dist/",
+    "copy": "cp src/index.html dist/index.html",
+    "start": "yarn remake && yarn copy && webpack-dev-server --progress --develop",
+    "start:storybook": "yarn start-storybook -p 6006",
+    "build": "yarn remake && yarn copy && webpack --progress",
+    "build:storybook": "yarn remake && yarn build-storybook -o dist",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
   },
   "devDependencies": {
@@ -55,7 +57,7 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
-      "eslint 'src/**/*.{ts,tsx}' --fix"
+      "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
     ]
   },
   "husky": {
