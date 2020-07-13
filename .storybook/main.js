@@ -10,6 +10,7 @@ module.exports = {
       module: {
         ...config.module,
         rules: [
+          ...config.module.rules,
           {
             test: /\.(ts|tsx)$/,
             use: [
