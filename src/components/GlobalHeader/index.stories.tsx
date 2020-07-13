@@ -11,6 +11,6 @@ export default {
 
 export const basic = () => (
   <BrowserRouter>
-    <GlobalHeader pageTitle={text('Page Title', 'Hello, World!')} />
+    <GlobalHeader pageTitle={text('Page Title', 'Hello')} />
   </BrowserRouter>
 );

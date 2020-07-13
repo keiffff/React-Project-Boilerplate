@@ -70,6 +70,8 @@ module.exports = {
     'react/jsx-wrap-multilines': 'off',
     'react/no-array-index-key': 'off',
     'react/display-name': 'off',
+    'react/button-has-type': 'off',
+    'react/jsx-props-no-spreading': 'off',
     // react-hooks
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',

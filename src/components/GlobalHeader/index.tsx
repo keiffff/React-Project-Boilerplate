@@ -30,12 +30,6 @@ const baseStyle = css({
 const linkStyle = css({
   display: 'inline-block',
   textDecoration: 'none',
-  background: 'linear-gradient(to right, #fc00ff, #00dbde)',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  '&:hover': {
-    textDecoration: 'underline',
-  },
   '& + &': {
     marginLeft: 8,
   },
