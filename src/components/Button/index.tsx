@@ -4,10 +4,11 @@ import { css as cssOrigin, SerializedStyles } from '@emotion/core';
 type Props = {
   children: ReactNode;
   css?: SerializedStyles;
+  theme?: 'outlined' | 'filled';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button = ({ children, css, type = 'button', ...rest }: Props) => (
-  <button css={[baseStyle, css]} type={type} {...rest}>
+export const Button = ({ children, theme = 'outlined', css, type = 'button', ...rest }: Props) => (
+  <button css={[style[theme], css]} type={type} {...rest}>
     {children}
   </button>
 );
@@ -32,3 +33,12 @@ const baseStyle = cssOrigin({
   borderRadius: '5px',
   outline: 'none',
 });
+
+const style = {
+  outlined: baseStyle,
+  filled: cssOrigin(baseStyle, {
+    backgroundColor: 'hotpink',
+    color: 'white',
+    border: '1px solid transparent',
+  }),
+} as const;
