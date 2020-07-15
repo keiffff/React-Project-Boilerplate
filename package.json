@@ -5,12 +5,10 @@
   "author": "Kei Fujikawa",
   "license": "MIT",
   "scripts": {
-    "remake": "rm -rf dist/ && mkdir -p dist/",
-    "copy": "cp src/index.html dist/index.html",
-    "start": "yarn remake && yarn copy && webpack-dev-server --progress --develop",
+    "start": "webpack-dev-server --progress --develop",
     "start:storybook": "yarn start-storybook -p 6006",
-    "build": "yarn remake && yarn copy && webpack --progress",
-    "build:storybook": "yarn remake && yarn build-storybook -o dist",
+    "build": "webpack --progress",
+    "build:storybook": "yarn build-storybook -o dist",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
   },
   "devDependencies": {
@@ -40,6 +38,7 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.7",
     "fork-ts-checker-webpack-plugin": "^5.0.7",
+    "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",

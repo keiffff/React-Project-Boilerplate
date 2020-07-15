@@ -1,6 +1,9 @@
 const path = require('path');
 const { argv } = require('yargs');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+
+const outputPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
   mode: argv.develop ? 'development' : 'production',
@@ -11,7 +14,7 @@ module.exports = {
   },
   devServer: {
     open: true,
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: outputPath,
     historyApiFallback: true,
     watchContentBase: true,
     port: 3000,
@@ -35,10 +38,10 @@ module.exports = {
       },
     ],
   },
-  plugins: [new ForkTsCheckerWebpackPlugin()],
+  plugins: [new ForkTsCheckerWebpackPlugin(), new HtmlWebpackPlugin({ template: './src/index.html' })],
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: outputPath,
     publicPath: '/',
   },
 };
