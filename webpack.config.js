@@ -41,6 +41,7 @@ module.exports = {
   plugins: [new ForkTsCheckerWebpackPlugin(), new HtmlWebpackPlugin({ template: './src/index.html' })],
   output: {
     filename: 'index.js',
+    chunkFilename: 'chunk-[name].js',
     path: outputPath,
     publicPath: '/',
   },
